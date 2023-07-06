@@ -1,23 +1,36 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Navbar from './Navbar/Navbar';
+import BasicExample from './version5/Basic';
+import UrlParams from './version5/UrlParams';
+
+
+
+
+
+const navObj = {
+  "BasicExample": true,
+  "UrlParams": false,
+
+}
 
 function App() {
+
+  const [nav, setNav] = useState(navObj)
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App main">
+      <Navbar navObj={nav} setNav={setNav} />
+      <h1>This is version 5 react router dom</h1>
+      {nav.BasicExample && <>
+        <h5>Basic Example v5</h5>
+        <BasicExample />
+      </>}
+      {nav.UrlParams && <>
+        <h5>Url params v5</h5>
+        <UrlParams />
+      </>}
     </div>
   );
 }
