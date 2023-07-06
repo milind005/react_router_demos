@@ -12,6 +12,7 @@ body {
   background-color: #111;
   overflow-x: hidden;
   padding-top: 20px;
+  border: 3px solid yellow;
 }
 
 .sidenav a {
@@ -20,6 +21,9 @@ body {
 
   color: white;
   display: block;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 2px 15px;
 }
 
 .sidenav a:hover {

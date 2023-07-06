@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from './Navbar/Navbar';
 import BasicExample from './version5/Basic';
 import UrlParams from './version5/UrlParams';
-
+import NestingPath from './version5/NestingPath';
 
 
 
@@ -11,6 +11,7 @@ import UrlParams from './version5/UrlParams';
 const navObj = {
   "BasicExample": true,
   "UrlParams": false,
+  "NestingPath": false,
 
 }
 
@@ -22,17 +23,14 @@ function App() {
   return (
     <div className="App main">
       <Navbar navObj={nav} setNav={setNav} />
-      <h1>This is version 5 react router dom</h1>
-      {nav.BasicExample && <>
-        <h5>Basic Example v5</h5>
-        <BasicExample />
-      </>}
-      {nav.UrlParams && <>
-        <h5>Url params v5</h5>
-        <UrlParams />
-      </>}
+
+      {nav.BasicExample && <BasicExample />}
+      {nav.UrlParams && <UrlParams />}
+      {nav.NestingPath && <NestingPath />}
     </div>
   );
+
+
 }
 
 export default App;
