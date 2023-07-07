@@ -10,7 +10,7 @@ const Navbar = ({ navObj, setNav }) => {
 
 
     function navHandler(cur) {
-
+        console.log(cur)
         let obj = { ...navObj }
         Object.keys(obj).forEach((cat) => {
             if (cat === cur) {

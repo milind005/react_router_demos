@@ -15,8 +15,6 @@ const NestingPath = () => {
                 <Switch>
                     <Route exact path="/"> <Home /></Route>
                     <Route path="/topics">  <Topics /></Route>
-
-
                 </Switch>
             </BrowserRouter>
         </div>
@@ -33,7 +31,7 @@ function Home() {
 }
 function Topics() {
     const { url, path } = useRouteMatch()
-    console.log(url, path)
+
     return (
         <div>
             <h2>Topics</h2>
