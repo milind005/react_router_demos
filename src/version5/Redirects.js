@@ -12,14 +12,15 @@ const Redirects = () => {
                 <MessageCompo />
                 <div>
                     <ul>
-                        <li><Link to="/public" >Home</Link></li>
+                        <li><Link to="/" >Home</Link></li>
                         {/* <li><Link to="/Login" >Login</Link></li> */}
                         <li><Link to="/protected" >Protected page</Link></li>
+                        <li><Link to="/Login" >Login</Link></li>
                     </ul>
                 </div>
                 <div>
                     <Switch>
-                        <Route path="/public" component={Home} />
+                        <Route exact path="/" component={Home} />
                         <Route path="/protected" component={Protected} />
                         <Route path="/Login" component={Login} />
                     </Switch>
@@ -47,6 +48,7 @@ function Protected() {
         )
     }
     if (!isLogin) {
+        alert("you are not login going to login")
         return <Redirect to="/Login" />
     }
 }
@@ -57,10 +59,13 @@ function Login() {
     const history = useHistory()
     if (isLogin) {
         // return <Redirect to="/Protected" />
+        alert("You are  Login going to protected ")
         history.push("/protected")
     }
     else {
+
         return <div>
+
             <p>You must login to view the page Protected</p>
             <button
                 onClick={() => {
