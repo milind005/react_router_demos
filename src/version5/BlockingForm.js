@@ -45,7 +45,7 @@ function FormCompo() {
                 </p>
 
                 <Prompt
-                    when={isBlocking}
+                    when={true}
                     message={location =>
                         `Are you sure you want to go to ${location.pathname}`
                     }
